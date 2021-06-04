@@ -14,6 +14,7 @@ pip install keras
 
 數據匯入後，先把數據分成85/15，15為驗證集，再把85拆成80/20。
 因為要使用深度類神經進行預測，所以訓練集與測試集的數據型態都需轉成矩陣，並使用正規化(min-max)，讓數據都介於0~1之間
+
 ˋˋˋ
 #訓練與測試的x&y正規化需分開設定
 trainx = preprocessing.MinMaxScaler()
@@ -27,7 +28,9 @@ testx_minmax = testx.fit_transform(npx_test).reshape(npx_test.shape[0],npx_test.
 testy_minmax = testy.fit_transform(npy_test).reshape(npy_test.shape[0],npy_test.shape[1])
 
 ˋˋˋ
+
 若要還原到正常數值得化就使用原本的訓練集數據逆推。
+
 ˋˋˋ
 retrain_x = trainx.inverse_transform(trainx_minmax)
 retrain_y = trainy.inverse_transform(trainy_minmax)
