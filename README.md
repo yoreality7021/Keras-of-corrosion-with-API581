@@ -57,9 +57,11 @@ retest_y = testy.inverse_transform(testy_minmax)
 
 激勵函數使用ReLU，kernel使用he_normal，輸出層時再使用sigmoid收斂
 
-使用模型評估指標，訓練集與測試集的R^2都再0.99多，RMSE與MAPE都很小，誤差極小
+使用模型評估指標，訓練集與測試集的R^2都在0.99多，RMSE與MAPE都很小，誤差極小
 
 再將經過深度類神經模型(keras model)預測出來的含水量與pH值另外存檔
+
+pH值要跟各管段操作溫度一起進入AI-model 2預測出初步的腐蝕率(beta)
 
 #AI-model 2：knn model for API 581
 
