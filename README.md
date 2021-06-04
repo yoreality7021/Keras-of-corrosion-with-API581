@@ -6,7 +6,7 @@
 再根據廠方提供的修正係數公式，計算出修正係數(alpha)。
 最後，再把alpha與beta相乘，得出修正後的腐蝕率。
 
-#AI-model 1：Keras model(深度類神經模型)
+# AI-model 1：Keras model(深度類神經模型)
 
 安裝keras於虛擬環境中，還有須安裝tensorflow(2.2以上(含))，是連動的。
 ```
@@ -64,5 +64,5 @@ retest_y = testy.inverse_transform(testy_minmax)
 
 pH值要跟各管段操作溫度一起進入AI-model 2預測出初步的腐蝕率(beta)
 
-#AI-model 2：knn model for API 581
+# AI-model 2：knn model for API 581
 
