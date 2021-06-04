@@ -7,6 +7,7 @@
 最後，再把alpha與beta相乘，得出修正後的腐蝕率。
 
 #AI-model 1：Keras model(深度類神經模型)
+
 安裝keras於虛擬環境中，還有須安裝tensorflow(2.2以上(含))，是連動的。
 ```
 pip install keras
