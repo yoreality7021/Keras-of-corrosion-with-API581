@@ -19,14 +19,21 @@ pip install keras
 #訓練與測試的x&y正規化需分開設定
 
 trainx = preprocessing.MinMaxScaler()
+
 trainy = preprocessing.MinMaxScaler()
+
 testx = preprocessing.MinMaxScaler()
+
 testy = preprocessing.MinMaxScaler()
 
 #fit_transform()為正規化(0~1之間)
+
 trainx_minmax = trainx.fit_transform(npx_train).reshape(npx_train.shape[0],npx_train.shape[1])
+
 trainy_minmax = trainy.fit_transform(npy_train).reshape(npy_train.shape[0],npy_train.shape[1])
+
 testx_minmax = testx.fit_transform(npx_test).reshape(npx_test.shape[0],npx_test.shape[1])
+
 testy_minmax = testy.fit_transform(npy_test).reshape(npy_test.shape[0],npy_test.shape[1])
 
 -------
@@ -35,8 +42,11 @@ testy_minmax = testy.fit_transform(npy_test).reshape(npy_test.shape[0],npy_test.
 
 -------
 retrain_x = trainx.inverse_transform(trainx_minmax)
+
 retrain_y = trainy.inverse_transform(trainy_minmax)
+
 retest_x = testx.inverse_transform(testx_minmax)
+
 retest_y = testy.inverse_transform(testy_minmax)
 
 -------
