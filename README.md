@@ -19,11 +19,8 @@ pip install keras
 #訓練與測試的x&y正規化需分開設定
 
 trainx = preprocessing.MinMaxScaler()
-
 trainy = preprocessing.MinMaxScaler()
-
 testx = preprocessing.MinMaxScaler()
-
 testy = preprocessing.MinMaxScaler()
 
 #fit_transform()為正規化(0~1之間)
