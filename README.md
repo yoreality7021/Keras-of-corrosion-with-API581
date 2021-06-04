@@ -52,10 +52,13 @@ retest_y = testy.inverse_transform(testy_minmax)
 -------
 
 接著開始進入keras模型進行預測，輸入層1層、隱藏層1層、輸出層1層、輸入元5個、輸出元2個
+
 經過迭代收尋法比較後，神經元數為128個較佳、batch_size為16較佳、使用500次迭代
+
 激勵函數使用ReLU，kernel使用he_normal，輸出層時再使用sigmoid收斂
 
 使用模型評估指標，訓練集與測試集的R^2都再0.99多，RMSE與MAPE都很小，誤差極小
+
 再將經過深度類神經模型(keras model)預測出來的含水量與pH值另外存檔
 
 #AI-model 2：knn model for API 581
