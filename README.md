@@ -57,11 +57,9 @@ knn.fit(X_train, y_train)
 ```
 
 用混淆矩陣呈現預測結果
-ˋˋˋ
+```
 from sklearn.metrics import classification_report,confusion_matrix
-ˋˋˋ
 
-ˋˋˋ
 print(confusion_matrix(ytest,pred))
-ˋˋˋ
+```
 
