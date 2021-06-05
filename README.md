@@ -54,6 +54,7 @@ from sklearn.neighbors import KNeighborsClassifier
 knn = KNeighborsClassifier(n_neighbors=2)
 
 knn.fit(X_train, y_train)
+
 ˋˋˋ
 
 用混淆矩陣呈現預測結果
@@ -61,5 +62,6 @@ knn.fit(X_train, y_train)
 from sklearn.metrics import classification_report,confusion_matrix
 
 print(confusion_matrix(ytest,pred))
+
 ˋˋˋ
 
