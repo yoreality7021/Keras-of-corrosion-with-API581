@@ -51,9 +51,11 @@ pH值要跟各管段操作溫度一起進入AI-model 2預測出初步的腐蝕�
 ˋˋˋ
 from sklearn.neighbors import KNeighborsClassifier
 ˋˋˋ
+
 ˋˋˋ
 knn = KNeighborsClassifier(n_neighbors=2)
 ˋˋˋ
+
 ˋˋˋ
 knn.fit(X_train, y_train)
 ˋˋˋ
@@ -62,6 +64,7 @@ knn.fit(X_train, y_train)
 ˋˋˋ
 from sklearn.metrics import classification_report,confusion_matrix
 ˋˋˋ
+
 ˋˋˋ
 print(confusion_matrix(ytest,pred))
 ˋˋˋ
