@@ -18,7 +18,6 @@ pip install keras
 
 因為要使用深度類神經進行預測，所以訓練集與測試集的數據型態都需轉成矩陣，並使用正規化(min-max)，讓數據都介於0~1之間
 
--------
 #訓練與測試的x&y正規化需分開設定，Ex：
 
 ```
@@ -30,15 +29,12 @@ trainx = preprocessing.MinMaxScaler()
 ```
 trainx_minmax = trainx.fit_transform(npx_train).reshape(npx_train.shape[0],npx_train.shape[1])
 ```
--------
 
 若要還原到正常數值得化就使用原本的訓練集數據逆推。
 
--------
 ```
 retrain_x = trainx.inverse_transform(trainx_minmax)
 ```
--------
 
 接著開始進入keras模型進行預測，輸入層1層、隱藏層1層、輸出層1層、輸入元5個、輸出元2個
 
