@@ -48,17 +48,13 @@ pH值要跟各管段操作溫度一起進入AI-model 2預測出初步的腐蝕�
 ### AI-model 2：knn model for API 581
 
 因為API 581屬於非線性的資料庫，因此嘗試使用多種機器學習方法來建立，問題都會使預測值產生負值，最後使用KNN來建立，沒有負值產生
-ˋˋˋ
+```
 from sklearn.neighbors import KNeighborsClassifier
-ˋˋˋ
 
-ˋˋˋ
 knn = KNeighborsClassifier(n_neighbors=2)
-ˋˋˋ
 
-ˋˋˋ
 knn.fit(X_train, y_train)
-ˋˋˋ
+```
 
 用混淆矩陣呈現預測結果
 ˋˋˋ
