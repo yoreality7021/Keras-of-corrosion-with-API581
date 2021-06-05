@@ -1,4 +1,4 @@
-# ARO3-Corrosion rate predict
+# ARO3-Corrosion rate predict(python)
 
 ## Summary
 主要是利用深度類神經先行預測含水量與pH值，再使用knn model來建立API 581的數值型態，先行計算出初步的腐蝕率(beta)；
@@ -19,19 +19,16 @@ pip install keras
 因為要使用深度類神經進行預測，所以訓練集與測試集的數據型態都需轉成矩陣，並使用正規化(min-max)，讓數據都介於0~1之間
 
 #訓練與測試的x&y正規化需分開設定，Ex：
-
 ```
 trainx = preprocessing.MinMaxScaler()
 ```
 
 #fit_transform()為正規化(0~1之間)
-
 ```
 trainx_minmax = trainx.fit_transform(npx_train).reshape(npx_train.shape[0],npx_train.shape[1])
 ```
 
 若要還原到正常數值得化就使用原本的訓練集數據逆推。
-
 ```
 retrain_x = trainx.inverse_transform(trainx_minmax)
 ```
@@ -50,10 +47,19 @@ pH值要跟各管段操作溫度一起進入AI-model 2預測出初步的腐蝕�
 
 ### AI-model 2：knn model for API 581
 
-因為API 581屬於非線性的資料庫，因此嘗試使用多種機器學習方法來建立，最後使用KNN來建立
-
+因為API 581屬於非線性的資料庫，因此嘗試使用多種機器學習方法來建立，問題都會使預測值產生負值，最後使用KNN來建立，沒有負值產生
 ˋˋˋ
 from sklearn.neighbors import KNeighborsClassifier
+
 knn = KNeighborsClassifier(n_neighbors=2)
+
 knn.fit(X_train, y_train)
 ˋˋˋ
+
+用混淆矩陣呈現預測結果
+ˋˋˋ
+from sklearn.metrics import classification_report,confusion_matrix
+
+print(confusion_matrix(ytest,pred))
+ˋˋˋ
+
