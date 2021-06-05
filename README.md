@@ -63,3 +63,10 @@ from sklearn.metrics import classification_report,confusion_matrix
 print(confusion_matrix(ytest,pred))
 ```
 
+### AI-model 1 and 2 to calculate corrosion rate
+
+輸入各管段的操作溫度與經AI-model 1預測出來的pH值，進AI-model 2得出初步的腐蝕率(beta)
+
+經AI-model 1預測出來的含水量預測值，透過廠方提供的修正係數公式表，得出各管段的修正係數(alpha)
+
+最後再將各管段修正係數(alpha)與各管段初步的腐蝕率(beta)相乘，得出修正後的腐蝕率，即為各管段的腐蝕率
