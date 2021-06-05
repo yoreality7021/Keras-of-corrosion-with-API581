@@ -27,15 +27,17 @@ trainx = preprocessing.MinMaxScaler()
 
 #fit_transform()為正規化(0~1之間)
 
+```
 trainx_minmax = trainx.fit_transform(npx_train).reshape(npx_train.shape[0],npx_train.shape[1])
-
+```
 -------
 
 若要還原到正常數值得化就使用原本的訓練集數據逆推。
 
 -------
+```
 retrain_x = trainx.inverse_transform(trainx_minmax)
-
+```
 -------
 
 接著開始進入keras模型進行預測，輸入層1層、隱藏層1層、輸出層1層、輸入元5個、輸出元2個
