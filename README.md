@@ -38,7 +38,7 @@ retrain_x = trainx.inverse_transform(trainx_minmax)
 
 input is 5, output is 1, dense is 1 step
 
-經過迭代搜尋法比較後，神經元數為128個較佳、batch_size為16較佳、使用500次迭代
+經迭代搜尋法找尋後，神經元數為128較佳、batch_size為16較佳、使用500次迭代
 
 活化函數使用ReLU，kernel使用he_normal，輸出層時再使用sigmoid收斂
 
