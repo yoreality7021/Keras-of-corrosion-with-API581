@@ -1,11 +1,13 @@
 # Corrosion rate predict(Keras/KNN/alpha/beta)
 
 ## Summary
-主要是利用深度類神經先行預測含水量與pH值，再使用knn model來建立API 581的數值型態，先行計算出初步的腐蝕率(beta)；
+第一階段：使用深度類神經預測含水量與pH值，
 
-再根據廠方提供的修正係數公式，計算出修正係數(alpha)；
+第二階段：使用knn model來建立與API 581的相同的數據模型，先行計算出初步的腐蝕率(beta)；
 
-最後，再把alpha與beta相乘，得出修正後的腐蝕率(fixed cor. rate)
+第三階段：根據廠方提供的修正係數公式，計算出修正係數(alpha)；
+
+第四階段：把alpha與beta相乘，得出修正後的腐蝕率(fixed cor. rate)
 
 ### AI-model 1：Keras model(DNN)
 
