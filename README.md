@@ -33,6 +33,7 @@ trainx_minmax = trainx.fit_transform(npx_train).reshape(npx_train.shape[0],npx_t
 retrain_x = trainx.inverse_transform(trainx_minmax)
 ```
 #Keras model build
+
 接著開始進入keras模型進行預測，input is 5, output is 1, dense is 1 step
 
 經過迭代搜尋法比較後，神經元數為128個較佳、batch_size為16較佳、使用500次迭代
