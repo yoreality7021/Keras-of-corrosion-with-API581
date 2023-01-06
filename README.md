@@ -1,15 +1,15 @@
-# Corrosion rate predict(python)
+# Corrosion rate predict(Keras/KNN/alpha/beta)
 
 ## Summary
 主要是利用深度類神經先行預測含水量與pH值，再使用knn model來建立API 581的數值型態，先行計算出初步的腐蝕率(beta)；
 
 再根據廠方提供的修正係數公式，計算出修正係數(alpha)；
 
-最後，再把alpha與beta相乘，得出修正後的腐蝕率。
+最後，再把alpha與beta相乘，得出修正後的腐蝕率(fixed cor. rate)
 
 ### AI-model 1：Keras model(DNN)
 
-安裝keras於虛擬環境中，還有須安裝tensorflow(2.2以上(含))，是連動的
+安裝keras於虛擬環境中，還有須安裝tensorflow(2.2以上(含))，兩者是連動的
 ```
 pip install keras
 ```
@@ -28,7 +28,7 @@ trainx = preprocessing.MinMaxScaler()
 trainx_minmax = trainx.fit_transform(npx_train).reshape(npx_train.shape[0],npx_train.shape[1])
 ```
 
-若要還原到正常數值得化就使用原本的訓練集數據逆推。
+若要還原到正常數值得化就使用原本的訓練集數據逆推
 ```
 retrain_x = trainx.inverse_transform(trainx_minmax)
 ```
